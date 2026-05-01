@@ -14,5 +14,13 @@ def add():
         tasks.append(task)
     return redirect('/')
 
+# --- THIS IS THE DELETE FUNCTION ---
+@app.route('/delete/<int:task_id>')
+def delete(task_id):
+    # This checks if the task exists and pops it out of the list
+    if 0 <= task_id < len(tasks):
+        tasks.pop(task_id)
+    return redirect('/')
+
 if __name__ == '__main__':
     app.run()
