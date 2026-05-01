@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PinnaclePulse | Task Manager</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #e8f5e9; padding: 50px; text-align: center; }
+        .box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: inline-block; min-width: 300px; }
+        h1 { color: #2e7d32; }
+        input[type="text"] { padding: 10px; width: 70%; border: 1px solid #ddd; border-radius: 5px; }
+        button { padding: 10px 20px; background: #2e7d32; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        ul { list-style: none; padding: 0; text-align: left; }
+        li { background: #f9f9f9; margin: 10px 0; padding: 10px; border-left: 4px solid #2e7d32; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>PinnaclePulse</h1>
+        <p>Dynamic Task Management System</p>
+        <form action="/add" method="POST">
+            <input type="text" name="task" placeholder="Enter a new task..." required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
